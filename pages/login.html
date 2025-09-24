@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="login-container">
+        <form class="login-form"></form>
+            <h2>Login</h2>
+            <div class="input-group">
+                <input id="User" type="text" placeholder="Email or Phone" required>
+            </div>
+            <div class="input-group">
+                <input id="password" type="password" placeholder="Password" required>
+            </div>
+            <button type="submit">Sign In</button>
+            <p class="signup-link">Don't have an account? <a href="#">Sign up</a></p>
+        </form>
+    </div>
+    <style>
+    body {
+        background: linear-gradient(120deg, #2980b9, #6dd5fa, #ffffff);
+        min-height: 100vh;
+        margin: 0;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .login-container {
+        background: #fff;
+        padding: 2.5rem 2rem;
+        border-radius: 16px;
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+        max-width: 350px;
+        width: 100%;
+        /* margin-right: 10px; */
+    }
+    .login-form h2 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        color: #2980b9;
+        letter-spacing: 1px;
+    }
+    h2{
+        color: rgb(122, 70, 6);
+    }
+    .input-group {
+        margin-bottom: 1.2rem;
+    }
+    .input-group {
+        display: flex;
+        justify-content: center;
+    }
+    .input-group input {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        border: 1px solid #b2bec3;
+        border-radius: 8px;
+        font-size: 1rem;
+        outline: none;
+        transition: border 0.2s;
+    }
+    }
+    .input-group input:focus {
+        border-color: #2980b9;
+    }
+    button[type="submit"] {
+        width: 100%;
+        padding: 0.75rem;
+        background: #2980b9;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+    button[type="submit"]:hover {
+        background: #2573a6;
+    }
+    .signup-link {
+        text-align: center;
+        margin-top: 1rem;
+        font-size: 0.95rem;
+    }
+    .signup-link a {
+        color: #2980b9;
+        text-decoration: none;
+        font-weight: 500;
+    }
+    .signup-link a:hover {
+        text-decoration: underline;
+    }
+    </style></div>
+</body>
+</html>
