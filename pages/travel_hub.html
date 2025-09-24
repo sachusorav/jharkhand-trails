@@ -208,7 +208,7 @@
                                 document.getElementById('map-search-btn').addEventListener('click', function() {
                                     const query = document.getElementById('map-search-input').value.trim();
                                     if (query) {
-                                        window.open(https://www.google.com/maps/search/${encodeURIComponent(query)}, '_blank');
+                                        window.open(`https://www.google.com/maps/search/${encodeURIComponent(query)}`, '_blank');
                                     } else {
                                         window.open('https://www.google.com/maps', '_blank');
                                     }
@@ -216,7 +216,7 @@
                                 document.getElementById('street-view-btn').addEventListener('click', function() {
                                     const query = document.getElementById('map-search-input').value.trim();
                                     if (query) {
-                                        window.open(https://www.google.com/maps/search/${encodeURIComponent(query)}/@?api=1&map_action=pano, '_blank');
+                                        window.open(`https://www.google.com/maps/search/${encodeURIComponent(query)}/@?api=1&map_action=pano`, '_blank');
                                     } else {
                                         window.open('https://www.google.com/maps/@?api=1&map_action=pano', '_blank');
                                     }
@@ -224,7 +224,7 @@
                                 document.getElementById('360-view-btn').addEventListener('click', function() {
                                     const query = document.getElementById('map-search-input').value.trim();
                                     if (query) {
-                                        window.open(https://www.google.com/maps/search/${encodeURIComponent(query)}/@?api=1&map_action=pano, '_blank');
+                                        window.open(`https://www.google.com/maps/search/${encodeURIComponent(query)}/@?api=1&map_action=pano`, '_blank');
                                     } else {
                                         window.open('https://www.google.com/maps/@?api=1&map_action=pano', '_blank');
                                     }
