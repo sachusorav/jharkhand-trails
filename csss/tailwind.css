@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&display=swap');
+
+/* @tailwind base; */
+/* @tailwind components; */
+/* @tailwind utilities; */
+
+:root {
+  /* Primary Colors - Jharkhand's red earth, grounding and authentic */
+  --color-primary: #8B4513; /* saddle-brown */
+  --color-primary-50: #FDF8F4; /* very light brown */
+  --color-primary-100: #F7E6D3; /* light brown */
+  --color-primary-200: #EFCCA7; /* medium light brown */
+  --color-primary-300: #E7B27B; /* medium brown */
+  --color-primary-400: #DF984F; /* darker brown */
+  --color-primary-500: #8B4513; /* saddle-brown */
+  --color-primary-600: #7A3D11; /* darker saddle-brown */
+  --color-primary-700: #69350F; /* very dark brown */
+  --color-primary-800: #582D0D; /* extremely dark brown */
+  --color-primary-900: #47250B; /* deepest brown */
+
+  /* Secondary Colors - Forest canopy, growth and exploration */
+  --color-secondary: #228B22; /* forest-green */
+  --color-secondary-50: #F0F9F0; /* very light green */
+  --color-secondary-100: #D4F4D4; /* light green */
+  --color-secondary-200: #A8E8A8; /* medium light green */
+  --color-secondary-300: #7CDD7C; /* medium green */
+  --color-secondary-400: #50D150; /* bright green */
+  --color-secondary-500: #228B22; /* forest-green */
+  --color-secondary-600: #1F7D1F; /* darker forest-green */
+  --color-secondary-700: #1B6F1B; /* very dark green */
+  --color-secondary-800: #186118; /* extremely dark green */
+  --color-secondary-900: #145314; /* deepest green */
+
+  /* Accent Colors - Tribal art warmth, celebration moments */
+  --color-accent: #FF6B35; /* orange-red */
+  --color-accent-50: #FFF4F1; /* very light orange */
+  --color-accent-100: #FFE4DB; /* light orange */
+  --color-accent-200: #FFC9B7; /* medium light orange */
+  --color-accent-300: #FFAE93; /* medium orange */
+  --color-accent-400: #FF936F; /* bright orange */
+  --color-accent-500: #FF6B35; /* orange-red */
+  --color-accent-600: #E6602F; /* darker orange-red */
+  --color-accent-700: #CC5529; /* very dark orange */
+  --color-accent-800: #B34A23; /* extremely dark orange */
+  --color-accent-900: #993F1D; /* deepest orange */
+
+  /* Background Colors */
+  --color-background: #FAF7F2; /* handmade-paper */
+  --color-surface: #F5F1EB; /* subtle-texture */
+
+  /* Text Colors */
+  --color-text-primary: #2C1810; /* rich-soil */
+  --color-text-secondary: #5D4E37; /* tree-bark */
+
+  /* Status Colors */
+  --color-success: #32CD32; /* lime-green */
+  --color-warning: #DAA520; /* goldenrod */
+  --color-error: #CD5C5C; /* indian-red */
+
+  /* Success Color Variations */
+  --color-success-50: #F0FFF0; /* very light lime */
+  --color-success-100: #D4F4D4; /* light lime */
+  --color-success-500: #32CD32; /* lime-green */
+  --color-success-600: #2DB82D; /* darker lime */
+  --color-success-700: #28A328; /* very dark lime */
+
+  /* Warning Color Variations */
+  --color-warning-50: #FEFCF0; /* very light gold */
+  --color-warning-100: #FDF5D4; /* light gold */
+  --color-warning-500: #DAA520; /* goldenrod */
+  --color-warning-600: #C4941D; /* darker goldenrod */
+  --color-warning-700: #AE831A; /* very dark gold */
+
+  /* Error Color Variations */
+  --color-error-50: #FDF2F2; /* very light red */
+  --color-error-100: #F8D7D7; /* light red */
+  --color-error-500: #CD5C5C; /* indian-red */
+  --color-error-600: #B85252; /* darker indian-red */
+  --color-error-700: #A34848; /* very dark red */
+}
+
+@layer base {
+  body {
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+  }
+
+  .font-accent {
+    font-family: 'Crimson Text', serif;
+  }
+}
+
+@layer components {
+  .shadow-natural {
+    box-shadow: 0 4px 12px rgba(139, 69, 19, 0.1);
+  }
+
+  .transition-natural {
+    transition: all 300ms ease-out;
+  }
+
+  .border-gentle {
+    border: 1px solid rgba(93, 78, 55, 0.2);
+  }
+}

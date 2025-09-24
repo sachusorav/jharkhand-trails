@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Portal - Jharkhand Trails</title>
+    <link rel="stylesheet" href="../csss/main.css" />
+    <meta name="description" content="Secure authentication portal for Jharkhand Trails - Your gateway to authentic cultural experiences and adventure tourism in India's heartland" />
+    <meta name="keywords" content="Jharkhand tourism, tribal culture, eco-tourism, adventure travel, cultural experiences" />
+    <link rel="manifest" href="../manifest.json" />
+    <meta name="theme-color" content="#8B4513" />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fjharkhand7179back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="min-h-screen bg-background font-sans">
+    <!-- Background Image Container with Overlay -->
+    <div class="fixed inset-0 z-0">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary-900/80 via-primary-800/70 to-secondary-900/80"></div>
+        <img id="backgroundImage" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Jharkhand Landscape" class="w-full h-full object-cover transition-opacity duration-1000" onerror="this.src='https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+    </div>
+
+    <!-- Main Content Container -->
+    <div class="relative z-10 min-h-screen flex items-center justify-center px-4 py-8">
+        <div class="w-full max-w-md">
+            <!-- Cultural Welcome Header -->
+            <div class="text-center mb-8">
+                <!-- Logo -->
+                <div class="mb-6">
+                    <img src="logogo.png" alt="Jharkhand Trails Logo" class="w-16 h-16 mx-auto rounded-full shadow-lg border-4 border-white object-cover" style="aspect-ratio:1/1;" />
+                </div>
+                
+                <!-- Brand Name -->
+                <h1 class="text-3xl font-inter font-bold text-white mb-2">
+                    Jharkhand Trails
+                </h1>
+                
+                <!-- Cultural Greeting -->
+                <p class="text-accent-200 font-accent text-lg mb-1">
+                    स्वागत है • Welcome
+                </p>
+                <p class="text-white/80 text-sm">
+                    Discover the soul of Jharkhand
+                </p>
+            </div>
+
+            <!-- Login Form Card -->
+            <div class="bg-white/95 backdrop-blur-sm rounded-2xl shadow-natural p-8 border border-gentle">
+                <!-- Form Header -->
+                <div class="text-center mb-6">
+                    <h2 class="text-2xl font-inter font-semibold text-text-primary mb-2">
+                        Welcome Back
+                    </h2>
+                    <p class="text-text-secondary text-sm">
+                        Continue your journey through India's heartland
+                    </p>
+                </div>
+
+                <!-- Login Form -->
+                <form id="loginForm" class="space-y-6">
+                    <!-- Email/Username Field -->
+                    <div class="space-y-2">
+                        <label for="email" class="block text-sm font-medium text-text-primary">
+                            Email or Username
+                        </label>
+                        <div class="relative">
+                            <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gentle rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-natural bg-white/80" placeholder="Enter your email or username" required aria-describedby="email-error" />
+                            <div class="absolute inset-y-0 right-0 flex items-center pr-3">
+                                <svg class="w-5 h-5 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div id="email-error" class="text-error-500 text-xs hidden" role="alert"></div>
+                    </div>
+
+                    <!-- Password Field -->
+                    <div class="space-y-2">
+                        <label for="password" class="block text-sm font-medium text-text-primary">
+                            Password
+                        </label>
+                        <div class="relative">
+                            <input type="password" id="password" name="password" class="w-full px-4 py-3 border border-gentle rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-natural bg-white/80 pr-12" placeholder="Enter your password" required aria-describedby="password-error" />
+                            <button type="button" id="togglePassword" class="absolute inset-y-0 right-0 flex items-center pr-3 text-text-secondary hover:text-text-primary transition-natural" aria-label="Toggle password visibility">
+                                <svg id="eyeIcon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div id="password-error" class="text-error-500 text-xs hidden" role="alert"></div>
+                        
+                        <!-- Password Strength Indicator -->
+                        <div id="passwordStrength" class="hidden">
+                            <div class="flex space-x-1 mt-2">
+                                <div class="h-1 flex-1 bg-gray-200 rounded"></div>
+                                <div class="h-1 flex-1 bg-gray-200 rounded"></div>
+                                <div class="h-1 flex-1 bg-gray-200 rounded"></div>
+                                <div class="h-1 flex-1 bg-gray-200 rounded"></div>
+                            </div>
+                            <p class="text-xs text-text-secondary mt-1" id="strengthText"></p>
+                        </div>
+                    </div>
+
+                    <!-- Remember Me & Forgot Password -->
+                    <div class="flex items-center justify-between">
+                        <label class="flex items-center">
+                            <input type="checkbox" id="remember" name="remember" class="w-4 h-4 text-primary-500 border-gentle rounded focus:ring-primary-500 focus:ring-2" />
+                            <span class="ml-2 text-sm text-text-secondary">Remember me</span>
+                        </label>
+                        <a href="javascript:void(0)" class="text-sm text-primary-600 hover:text-primary-700 transition-natural font-medium" onclick="showForgotPassword()">
+                            Forgot password?
+                        </a>
+                    </div>
+
+                    <!-- Login Button -->
+                    <button type="submit" class="w-full bg-primary-500 hover:bg-primary-600 text-white font-medium py-3 px-4 rounded-lg transition-natural focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 shadow-natural" id="loginButton">
+                        <span id="loginButtonText">Sign In</span>
+                        <svg id="loginSpinner" class="hidden animate-spin -ml-1 mr-3 h-5 w-5 text-white " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"/>
+                        </svg>
+                    </button>
+                </form>
+
+                <!-- Divider -->
+                <div class="my-6">
+                    <div class="relative">
+                        <div class="absolute inset-0 flex items-center">
+                            <div class="w-full border-t border-gentle"></div>
+                        </div>
+                        <div class="relative flex justify-center text-sm">
+                            <span class="px-2 bg-white text-text-secondary">Or continue with</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Login Options -->
+                <div class="grid grid-cols-2 gap-3">
+                    <button type="button" class="flex items-center justify-center px-4 py-2 border border-gentle rounded-lg hover:bg-surface transition-natural focus:ring-2 focus:ring-primary-500" onclick="socialLogin('google')">
+                        <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24">
+                            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                        </svg>
+                        <span class="text-sm font-medium text-text-primary">Google</span>
+                    </button>
+                    
+                    <button type="button" class="flex items-center justify-center px-4 py-2 border border-gentle rounded-lg hover:bg-surface transition-natural focus:ring-2 focus:ring-primary-500" onclick="socialLogin('facebook')">
+                        <svg class="w-5 h-5 mr-2" fill="#1877F2" viewBox="0 0 24 24">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                        <span class="text-sm font-medium text-text-primary">Facebook</span>
+                    </button>
+                </div>
+
+                <!-- Guide Verification Notice -->
+                <div class="mt-6 p-4 bg-secondary-50 border border-secondary-200 rounded-lg">
+                    <div class="flex items-start">
+                        <svg class="w-5 h-5 text-secondary-600 mt-0.5 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <div>
+                            <h4 class="text-sm font-medium text-secondary-800">Local Guide Verification</h4>
+                            <p class="text-xs text-secondary-700 mt-1">
+                                Certified guides enjoy priority booking and enhanced profile visibility
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sign Up Link -->
+                <div class="text-center mt-6">
+                    <p class="text-sm text-text-secondary">
+                        New to Jharkhand Trails? 
+                        <a href="javascript:void(0)" class="text-primary-600 hover:text-primary-700 font-medium transition-natural" onclick="showSignUp()">
+                            Create an account
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Trust Signals -->
+            <div class="mt-8 text-center">
+                <div class="flex items-center justify-center space-x-6 text-white/80">
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-5 h-5 text-accent-400" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z"/>
+                        </svg>
+                        <span class="text-sm">Government Certified</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-5 h-5 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                        </svg>
+                        <span class="text-sm">Secure & Safe</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PWA Install Prompt (Hidden by default) -->
+    <div id="pwaPrompt" class="hidden fixed bottom-4 left-4 right-4 bg-white rounded-lg shadow-natural p-4 border border-gentle z-50">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <svg class="w-8 h-8 text-primary-500" viewBox="0 0 64 64" fill="currentColor">
+                    <path d="M32 4L44 16H20L32 4Z"/>
+                    <path d="M16 20H48V52C48 54.2 46.2 56 44 56H20C17.8 56 16 54.2 16 52V20Z"/>
+                </svg>
+                <div>
+                    <h4 class="font-medium text-text-primary">Install Jharkhand Trails</h4>
+                    <p class="text-sm text-text-secondary">Access your adventures offline</p>
+                </div>
+            </div>
+            <div class="flex space-x-2">
+                <button id="pwaInstall" class="bg-primary-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary-600 transition-natural">
+                    Install
+                </button>
+                <button id="pwaDismiss" class="text-text-secondary hover:text-text-primary px-2 py-2 rounded-lg transition-natural">
+                    ×
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Background Image Rotation
+        const backgroundImages = [
+            'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            'https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+            'https://images.pixabay.com/photo-2016/11/29/05/45/astronomy-1867616_1280.jpg',
+            'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+        ];
+
+        let currentImageIndex = 0;
+        const backgroundImg = document.getElementById('backgroundImage');
+
+        function rotateBackground() {
+            currentImageIndex = (currentImageIndex + 1) % backgroundImages.length;
+            backgroundImg.style.opacity = '0';
+            
+            setTimeout(() => {
+                backgroundImg.src = backgroundImages[currentImageIndex];
+                backgroundImg.style.opacity = '1';
+            }, 500);
+        }
+
+        // Rotate background every 10 seconds
+        setInterval(rotateBackground, 10000);
+
+        // Password Toggle
+        const togglePassword = document.getElementById('togglePassword');
+        const passwordInput = document.getElementById('password');
+        const eyeIcon = document.getElementById('eyeIcon');
+
+        togglePassword.addEventListener('click', function() {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            
+            if (type === 'text') {
+                eyeIcon.innerHTML = `
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.878 9.878L3 3m6.878 6.878L21 21"/>
+                `;
+            } else {
+                eyeIcon.innerHTML = `
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                `;
+            }
+        });
+
+        // Password Strength Checker
+        passwordInput.addEventListener('input', function() {
+            const password = this.value;
+            const strengthIndicator = document.getElementById('passwordStrength');
+            const strengthText = document.getElementById('strengthText');
+            const strengthBars = strengthIndicator.querySelectorAll('.h-1');
+
+            if (password.length > 0) {
+                strengthIndicator.classList.remove('hidden');
+                
+                let strength = 0;
+                let strengthLabel = '';
+                
+                if (password.length >= 8) strength++;
+                if (/[a-z]/.test(password)) strength++;
+                if (/[A-Z]/.test(password)) strength++;
+                if (/[0-9]/.test(password)) strength++;
+                if (/[^A-Za-z0-9]/.test(password)) strength++;
+
+                // Reset bars
+                strengthBars.forEach(bar => {
+                    bar.className = 'h-1 flex-1 bg-gray-200 rounded';
+                });
+
+                // Set strength colors
+                if (strength <= 2) {
+                    strengthLabel = 'Weak';
+                    for (let i = 0; i < Math.min(strength, 2); i++) {
+                        strengthBars[i].classList.add('bg-error-500');
+                    }
+                } else if (strength <= 3) {
+                    strengthLabel = 'Fair';
+                    for (let i = 0; i < 3; i++) {
+                        strengthBars[i].classList.add('bg-warning-500');
+                    }
+                } else {
+                    strengthLabel = 'Strong';
+                    strengthBars.forEach(bar => {
+                        bar.classList.add('bg-success-500');
+                    });
+                }
+
+                strengthText.textContent = `Password strength: ${strengthLabel}`;
+            } else {
+                strengthIndicator.classList.add('hidden');
+            }
+        });
+
+        // Form Validation
+        const loginForm = document.getElementById('loginForm');
+        const emailInput = document.getElementById('email');
+        const emailError = document.getElementById('email-error');
+        const passwordError = document.getElementById('password-error');
+        const loginButton = document.getElementById('loginButton');
+        const loginButtonText = document.getElementById('loginButtonText');
+        const loginSpinner = document.getElementById('loginSpinner');
+
+        function showError(input, errorElement, message) {
+            input.classList.add('border-error-500', 'focus:ring-error-500', 'focus:border-error-500');
+            input.classList.remove('border-gentle', 'focus:ring-primary-500', 'focus:border-primary-500');
+            errorElement.textContent = message;
+            errorElement.classList.remove('hidden');
+        }
+
+        function clearError(input, errorElement) {
+            input.classList.remove('border-error-500', 'focus:ring-error-500', 'focus:border-error-500');
+            input.classList.add('border-gentle', 'focus:ring-primary-500', 'focus:border-primary-500');
+            errorElement.classList.add('hidden');
+        }
+
+        function validateEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email) || email.length >= 3; // Allow username or email
+        }
+
+        emailInput.addEventListener('blur', function() {
+            if (!validateEmail(this.value)) {
+                showError(this, emailError, 'Please enter a valid email or username');
+            } else {
+                clearError(this, emailError);
+            }
+        });
+
+        emailInput.addEventListener('input', function() {
+            if (this.value && validateEmail(this.value)) {
+                clearError(this, emailError);
+            }
+        });
+
+        passwordInput.addEventListener('blur', function() {
+            if (this.value.length < 6) {
+                showError(this, passwordError, 'Password must be at least 6 characters');
+            } else {
+                clearError(this, passwordError);
+            }
+        });
+
+        passwordInput.addEventListener('input', function() {
+            if (this.value.length >= 6) {
+                clearError(this, passwordError);
+            }
+        });
+
+        // Form Submission
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = emailInput.value;
+            const password = passwordInput.value;
+            let isValid = true;
+
+            // Validate email
+            if (!validateEmail(email)) {
+                showError(emailInput, emailError, 'Please enter a valid email or username');
+                isValid = false;
+            }
+
+            // Validate password
+            if (password.length < 6) {
+                showError(passwordInput, passwordError, 'Password must be at least 6 characters');
+                isValid = false;
+            }
+
+            if (isValid) {
+                // Show loading state
+                loginButton.disabled = true;
+                loginButtonText.textContent = 'Signing In...';
+                loginSpinner.classList.remove('hidden');
+
+                // Simulate login process
+                setTimeout(() => {
+                    // Reset button state
+                    loginButton.disabled = false;
+                    loginButtonText.textContent = 'Sign In';
+                    loginSpinner.classList.add('hidden');
+                    
+                    // Show success message
+                    alert('Login successful! Welcome to Jharkhand Trails.');
+                    
+                    // In a real app, redirect to dashboard
+                    // window.location.href = 'dashboard.html';
+                }, 2000);
+            }
+        });
+
+        // Social Login Functions
+        function socialLogin(provider) {
+            alert(`${provider.charAt(0).toUpperCase() + provider.slice(1)} login integration would be implemented here.`);
+        }
+
+        // Forgot Password Function
+        function showForgotPassword() {
+            const email = prompt('Please enter your email address for password recovery:');
+            if (email && validateEmail(email)) {
+                alert('Password recovery instructions have been sent to your email.');
+            } else if (email) {
+                alert('Please enter a valid email address.');
+            }
+        }
+
+        // Sign Up Function
+        function showSignUp() {
+            alert('Registration form would be displayed here or redirect to signup page.');
+        }
+
+        // PWA Installation
+        let deferredPrompt;
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            document.getElementById('pwaPrompt').classList.remove('hidden');
+        });
+
+        document.getElementById('pwaInstall').addEventListener('click', async () => {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                if (outcome === 'accepted') {
+                    document.getElementById('pwaPrompt').classList.add('hidden');
+                }
+                deferredPrompt = null;
+            }
+        });
+
+        document.getElementById('pwaDismiss').addEventListener('click', () => {
+            document.getElementById('pwaPrompt').classList.add('hidden');
+        });
+
+        // Accessibility: Focus management
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                // Close any open modals or prompts
+                document.getElementById('pwaPrompt').classList.add('hidden');
+            }
+        });
+
+        // Auto-focus email field on page load
+        window.addEventListener('load', function() {
+            emailInput.focus();
+        });
+
+        // Preload next background image for smooth transition
+        function preloadNextImage() {
+            const nextIndex = (currentImageIndex + 1) % backgroundImages.length;
+            const img = new Image();
+            img.src = backgroundImages[nextIndex];
+        }
+
+        // Preload first alternate image
+        setTimeout(preloadNextImage, 1000);
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>
